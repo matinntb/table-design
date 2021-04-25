@@ -1,0 +1,335 @@
+@font-face{
+    font-family: VarelaRound-Regular ;
+    src: url("VarelaRound-Regular.ttf");
+}
+body{
+    margin: 0px;
+    font-family:VarelaRound-Regular,vazir;
+    display: flex;
+ 
+}
+.background{
+     overflow: auto;
+    /*height: 100%;*/
+    width: 100%;
+    background: linear-gradient(to bottom left ,#462446 ,#eb6b56,#ffc153 ,#47b39d);
+    display: flex;
+ }
+
+.responsive{
+    height:600px;
+    width: 1300px;
+    margin:auto;
+  }
+  #blur{
+     position: fixed;
+     display: none;
+     top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(66, 66, 66, 0.671);
+    z-index: 99;
+   
+}
+.header{
+    color: white;
+
+
+  
+}
+.headertext{
+    float: left;
+    font-size: 27px;
+    margin-left: 22px;
+    margin-top:18px;
+    margin-right:0px;
+    
+    
+}
+.toheader{    
+    
+    margin-left: 475px;
+    white-space: nowrap;
+    width: 50px;
+    height: 20px;
+    margin-top:10px;
+    font-size:19px;
+  }
+.divtable{
+     height: 520px;
+    width: 1000px;
+ }
+.table{
+    width: 1300px;
+    font-size: 18px;
+ 
+   text-align: center;
+    border-collapse: collapse;
+    margin-bottom:10px;
+ 
+ }
+tr:nth-child(odd){
+    background-color: #ffffff;
+
+}
+tr:nth-child(even){
+    background-color: #e6e6e6;
+
+}
+#second{
+    background-color: #ffffff;
+}
+tr:nth-child(odd):hover{
+    background-color: rgb(177, 177, 177);
+}
+tr:nth-child(even):hover{
+    background-color: rgb(177, 177, 177);
+
+}
+td,th{
+    padding:17px 17px 17px 17px;   
+}
+
+#tr{
+    background-color: #462446;
+    color: white;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+
+#edit , #Add{
+    height: 32px;
+    width: 120px;
+    cursor: pointer;
+    text-align:center;
+    box-shadow: 0px 18px 20px -15px rgba(0,0,0,0.75);
+    background-color:#ffc153;
+    color: rgb(49, 49, 49);
+    font-weight: bolder;   
+    font-weight: bolder;
+    border: 0ch;
+    border-radius: 3px;
+    font-family: VarelaRound-Regular;
+    margin-right: 4px;
+    font-size:17px;
+ }
+ #edit:focus , #Add:focus{
+ outline: 0ch;
+ }
+
+#Add{
+    background-color: #2da78e;
+    width: 160px;
+
+     margin-left: 2px;
+    font-size:14px;
+  }
+
+
+#Add:hover,#edit:hover{
+    background-color:#faaa20;
+    color: black;
+    cursor: pointer;
+}
+#Add:hover{
+    background-color: #019463;
+    color: black;
+
+}
+#delete,#deleteselected{
+    background-color:#e75e49;
+    font-family:VarelaRound-Regular;
+    box-shadow: 0px 15px 15px -15px rgba(0,0,0,0.75);
+    color: rgb(49, 49, 49);
+    font-weight: bolder;
+    width: 104px;
+    height: 32px;
+    border: 0px;
+    border-radius: 3px;
+    margin-top:10px;
+    font-size:16px;
+}
+#delete:focus,#deleteselected:focus{
+    outline: 0ch;
+}
+#deleteselected{    
+    margin-left:140px;
+    width: 147px;
+     font-size:14px;
+    
+    
+}
+#delete:hover,#deleteselected:hover{
+    background-color:#e4280b;
+    color: black;
+    cursor: pointer;
+}
+#delete:hover{
+    background-color:#e4280b;
+
+}
+
+#searchbox{
+    width:280px;
+    height: 32px;
+      text-align: left;
+     background-color: white;
+       border-radius: 3px;
+    border:0px;
+    font-size:15px;
+    font-family:  VarelaRound-Regular , vazir;
+
+}
+#searchbox:focus{
+    outline: 0ch;;
+}
+#addEmployeeModal{
+    width: 350px;
+    height: 450px;
+    background-color: rgb(250, 250, 250) ;
+    float: left;
+    margin-left: 475px;
+    margin-top:0px;
+    position: absolute;
+    transition:opacity 2.6s;
+    display: none;
+    box-shadow: 0px 18px 60px 20px rgba(0, 0, 0, 0.23);
+    border-radius: 16px;
+    z-index: 999;
+    opacity: 0;
+
+ }
+
+.headeradd{
+    background-color: #462446;
+    width:350px;
+    height: 70px;
+    border-radius: 16px 16px 0 0;
+    color: white;
+
+
+ }
+.headeraddtext{
+    float: left;
+    font-size: 25px;
+    margin-left: 22px;
+    margin-top:18px;
+    margin-right:0px;
+    
+}
+.bodyadd{
+    width: 350px;
+    height: 410px;
+    background-color: rgb(255, 255, 255);
+    justify-content: center;
+    border-radius: 16px;
+
+}
+.divinputs{
+    width: 330px;
+    height: 330px;
+     margin-left:25px ;
+    margin-top:7px;
+    padding-top:10px;
+ }
+ .divbottom{
+     width: 350px;
+     height:70px ;
+ 
+ }
+label{
+    font-size: 15px;
+    color: rgb(53, 52, 52);
+ }
+.input{
+    width: 304px;
+    height: 30px;
+    border-radius: 3px;
+    border:1px rgb(212, 212, 212) solid;
+    margin-top:6px;
+    margin-bottom: 10px;
+    background-color: rgba(247, 247, 247, 0.788);
+ 
+}
+ 
+.input:focus{
+    outline: 0ch;
+}
+#okadd,#cancel{
+    
+    cursor: pointer;
+    text-align:center;
+    box-shadow: 0px 18px 20px -15px rgba(0,0,0,0.75);
+    color: rgb(49, 49, 49);
+   
+    font-family: VarelaRound-Regular;
+    margin-right: 4px;
+    font-size:15px;
+    background-color:#dadada;
+    font-weight: bolder;
+    width: 104px;
+    height: 32px;
+    border: 0px;
+    border-radius: 3px;
+    margin-top:20px;
+ }
+#okadd:focus,#cancel:focus{
+    outline:0ch;
+}
+#okadd{
+    background-color:#2da78e;
+    
+
+}
+#okadd:hover{
+    background-color: #019463;
+    color: black;
+    cursor: pointer;
+}
+#cancel{
+    margin-left:113px;
+}
+#cancel:hover{
+    background-color:#c2c2c2;
+    color: black;
+    cursor: pointer;
+
+}
+img{
+    width: 15px;
+    height: 15px;
+    opacity: 50%;
+    margin-left:140px;
+    margin-top:25px;
+    cursor: pointer;
+}
+img:hover{
+    opacity: 100%;
+}
+thead tr th{
+    background-color:#462446 ;
+    color: white;
+      border-bottom: solid 1px #b6b6b6a4;
+    
+    padding-bottom: 20px;
+    padding-top:20px ;
+    width: 10px;    
+    padding-left: 0px;
+    padding-right: 30px;
+
+
+}
+thead tr th:first-child{
+    font-size: 28px;
+     font-weight: bolder;
+     margin-right: 20px;
+    padding-right: 80px;
+      
+ }
+thead tr th:nth-child(2){
+     font-weight: normal;
+     padding-left: 50px;
+ }
+
