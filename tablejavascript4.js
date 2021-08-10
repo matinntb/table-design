@@ -1,5 +1,94 @@
 var op=0
 var op2=0
+// $(document).ready(function () {
+//
+//     $('#okAdd').click( function() {
+//
+//         alert($('#name').val())
+//
+//         var Name = $('#name').val();
+//
+//         var Lastname = $('#lastname').val();
+//
+//         var stdnumber = $('#stdnumber').val();
+//
+//         var phonenumber = $('#phonenumber').val();
+//
+//         var birth = $('#birth').val();
+//
+//         $.ajax({
+//
+//             url: "base.php",
+//
+//             type: "POST",
+//
+//             data: {
+//
+//                 Name: Name,
+//
+//                 Lastname: Lastname,
+//
+//                 stdnumber: stdnumber,
+//
+//                 phonenumber: phonenumber,
+//
+//                 birth: birth
+//
+//             },
+//
+//             success: function (dataResult) {
+//
+//                 var dataResult = JSON.parse(dataResult);
+//
+//                 if (dataResult.statusCode == 200) {
+//
+//                     // use sweet alert2 to show message
+//                     Swal.fire({
+//
+//                         icon: 'success',
+//
+//                         title: 'ثبت ',
+//
+//                         confirmButtonText: "باشه"
+//
+//                     })
+//
+//                 } else if (dataResult.statusCode == 400) {
+//
+//
+//                     Swal.fire({
+//
+//                         icon: 'error',
+//
+//                         title: "خطا در وارد کردن اطلاعات",
+//
+//                         html: dataResult.msg,
+//
+//                         confirmButtonText: "باشه"
+//
+//                     })
+//                 } else if (dataResult.statusCode == 500) {
+//
+//                     Swal.fire({
+//
+//                         icon: 'error',
+//
+//                         title: 'خطایی در سمت سرور رخ داد!',
+//
+//                         confirmButtonText: "باشه"
+//
+//                     })
+//
+//                 }
+//
+//             }
+//
+//         });
+//     })
+//
+//
+//
+// })
 function openwin(){
     
     document.getElementById("addEmployeeModal").style.display="block"
@@ -12,6 +101,7 @@ function openwin(){
     fade=setInterval(function(){fading()} ,20)
 
 }
+
 function fading()
     {
             if(document.getElementById("blur").style.opacity>1)
@@ -22,6 +112,7 @@ function fading()
             slides.style.opacity=op
 
         }
+
 function fading2()
     {
         if( document.getElementById("addEmployeeModal").style.opacity>1)
@@ -32,6 +123,7 @@ function fading2()
             slides2.style.opacity=op2
  
 		}
+
 function closewin(){
 document.getElementById("addEmployeeModal").style.display="none"
 var op=0
@@ -46,6 +138,7 @@ for(var i=0;i<5;i++){
 
 }
 }
+
 function nothing(elem){
  }
 function Addrow(){
@@ -54,6 +147,75 @@ function Addrow(){
     var std= document.getElementById('stdnumber').value
     var tel = document.getElementById('phonenumber').value
     var bdate = document.getElementById('birth').value
+
+    $.ajax({
+
+        url: "base.php",
+
+        type: "POST",
+
+        data: {
+
+            Name: fname,
+
+            Lastname: lname,
+
+            stdnumber: std,
+
+            phonenumber: tel,
+
+            birth: bdate
+
+        },
+
+        success: function (dataResult) {
+
+            var dataResult = JSON.parse(dataResult);
+
+            if (dataResult.statusCode == 200) {
+
+                // use sweet alert2 to show message
+                Swal.fire({
+
+                    icon: 'success',
+
+                    title: 'ثبت ',
+
+                    confirmButtonText: "باشه"
+
+                })
+
+            } else if (dataResult.statusCode == 400) {
+
+
+                Swal.fire({
+
+                    icon: 'error',
+
+                    title: "خطا در وارد کردن اطلاعات",
+
+                    html: dataResult.msg,
+
+                    confirmButtonText: "باشه"
+
+                })
+            } else if (dataResult.statusCode == 500) {
+
+                Swal.fire({
+
+                    icon: 'error',
+
+                    title: 'خطایی در سمت سرور رخ داد!',
+
+                    confirmButtonText: "باشه"
+
+                })
+
+            }
+
+        }
+
+    });
     var editbtn = document.createElement("BUTTON")
     editbtn.id="edit"
     
@@ -119,6 +281,7 @@ function Addrow(){
     }
 
 }
+
 function star(){
     var column=document.getElementById('tr').getElementsByTagName('th')
     for(var i=0;i<column.length;i++){
@@ -297,3 +460,4 @@ function search() {
     }
     }
     }
+
